@@ -3,8 +3,6 @@ var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
     
-var http = require('http');
-    
 Object.assign=require('object-assign')
 
 app.engine('html', require('ejs').renderFile);
@@ -107,11 +105,7 @@ app.get('/pagecount', function (req, res) {
       res.send('{ pageCount: ' + count + '}');
     });
   } else {
-    https.get('172.30.24.70:Service:8080/hello', (resp) => {
-    let data = '';
-    
     res.send('{ pageCount: -1 }');
-    res.send(data);
   }
 });
 
